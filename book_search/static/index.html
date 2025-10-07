@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>종촌고등학교 도서 검색</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div id="chat-container" class="chat-container"></div>
+        
+        <div class="search-container">
+            <div class="logo" id="logo">어떤 책을 찾고 있나요?</div>
+            <form class="search-box" id="searchForm">
+                <textarea class="search-input" autofocus placeholder="'컴퓨터 공학을 수학I과 엮을 수 있는 책들을 추천해줘'" id="searchInput" rows="1"></textarea>
+            </form>
+        </div>
+    </div>
+
+    <div class="book-modal" id="bookModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title" id="modalTitle">추천 도서 목록</div>
+                <button class="close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="book-list" id="bookList"></div>
+        </div>
+    </div>
+
+    <div class="book-modal" id="bookDetailsModal">
+        <div id="bookDetailsContent">
+            <div class="book-details-container">
+                <button class="details-modal-close-btn" onclick="closeDetailsModal()">&times;</button>
+                <div class="book-details-header">
+                    <div class="book-details-image">
+                        <img src="" alt="" id="details-image" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <div class="book-cover-large" id="details-image-placeholder" style="display:none;">📚</div>
+                    </div>
+                    <div class="book-details-info">
+                        <h2 class="book-details-title" id="details-title"></h2>
+                        <p class="book-details-author" id="details-author"></p>
+                        <a class="go-to-reading-btn" id="details-reading-link" href="#" target="_blank" rel="noopener noreferrer">독서로 가기</a>
+                    </div>
+                </div>
+                <div class="book-details-body">
+                    <div class="book-info-grid">
+                        <div class="book-info-item hidden" id="details-publisher-container">
+                            <span class="info-label">🏢 출판사</span>
+                            <span class="info-value" id="details-publisher"></span>
+                        </div>
+                        <div class="book-info-item hidden" id="details-year-container">
+                            <span class="info-label">📅 출판연도</span>
+                            <span class="info-value" id="details-year"></span>
+                        </div>
+                        <div class="book-info-item hidden" id="details-category-container">
+                            <span class="info-label">🏷️ 분류</span>
+                            <span class="info-value" id="details-category"></span>
+                        </div>
+                        <div class="book-info-item hidden" id="details-location-container">
+                            <span class="info-label">📍 위치</span>
+                            <span class="info-value" id="details-location"></span>
+                        </div>
+                        <div class="book-info-item hidden" id="details-isbn-container">
+                            <span class="info-label">🔢 ISBN</span>
+                            <span class="info-value" id="details-isbn"></span>
+                        </div>
+                        <div class="book-info-item hidden" id="details-pages-container">
+                            <span class="info-label">📄 페이지</span>
+                            <span class="info-value" id="details-pages"></span>
+                        </div>
+                    </div>
+                    <div class="book-description-section hidden" id="details-description-container">
+                        <h3 class="description-title">📝 내용 소개</h3>
+                        <p class="description-text" id="details-description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
