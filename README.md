@@ -98,7 +98,7 @@ uvicorn app:app --reload
 └── 📄 README.md
 ```
 
-https://drive.google.com/drive/folders/1GgFOoNC6kDOvbl8_T3XH4q11dubiTUQM?usp=sharing
+
 일단 여기서 필요한 파일을 다운로드 한 후에 파일 구조에 맞게 배치를 합니다.
 
 
